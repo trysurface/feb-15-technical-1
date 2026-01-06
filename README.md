@@ -26,15 +26,6 @@ This is a visual site builder that allows users to:
 - Edit component properties and styling
 - See a live preview of the page
 
-## What's Provided
-
-- State management (React useState)
-- Component list sidebar with add/delete functionality
-- Live preview panel that renders components
-- All UI layouts and styling (Tailwind CSS)
-- TypeScript types in `types/components.ts`
-- Preview renderers that apply component styles
-
 ## What You Need to Implement
 
 The component editors in `components/sidebar/editors/` are not implemented. You need to:
@@ -43,9 +34,9 @@ The component editors in `components/sidebar/editors/` are not implemented. You 
 
 ### Components to Edit
 
--Text Component** (`TextEditor.tsx`)
--Button Component** (`ButtonEditor.tsx`)
--Image Component** (`ImageEditor.tsx`)
+- **Text Component** (`TextEditor.tsx`)
+- **Button Component** (`ButtonEditor.tsx`)
+- **Image Component** (`ImageEditor.tsx`)
 
 ## Component Data Structure
 
@@ -70,3 +61,9 @@ When complete, you should be able to:
 - Change any style or property in a component
 - See the preview update in real-time
 - Style properties include units in the value (e.g., "16px", "2rem", "#ff0000")
+
+## Don't Worry About...
+
+- Listing the components in the sidebar 
+- Component add/delete functionality
+- Live preview panel that renders components

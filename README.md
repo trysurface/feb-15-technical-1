@@ -45,19 +45,10 @@ The component editors in `components/sidebar/editors/` are not implemented. You 
 ### Components to Edit
 
 **Text Component** (`TextEditor.tsx`)
-- Text content
-- Container alignment
-- Styling 
 
 **Button Component** (`ButtonEditor.tsx`)
-- Button text
-- Container alignment
-- Styling
 
 **Image Component** (`ImageEditor.tsx`)
-- Image URL, alt text
-- Container alignment
-- Styling
 
 ## Component Data Structure
 

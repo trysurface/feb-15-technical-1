@@ -1,4 +1,4 @@
-# Site Builder Technical Assessment
+# A Simple Site Builder 
 
 A React-based site builder for creating and editing page components with live preview.
 

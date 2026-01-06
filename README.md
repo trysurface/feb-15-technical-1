@@ -39,16 +39,13 @@ This is a visual site builder that allows users to:
 
 The component editors in `components/sidebar/editors/` are not implemented. You need to:
 
-1. **Build the editor forms** that allow editing component properties
-2. **Create reusable form input components** for handling different input types
+**Build the editor forms** that allow editing component properties
 
 ### Components to Edit
 
-**Text Component** (`TextEditor.tsx`)
-
-**Button Component** (`ButtonEditor.tsx`)
-
-**Image Component** (`ImageEditor.tsx`)
+-Text Component** (`TextEditor.tsx`)
+-Button Component** (`ButtonEditor.tsx`)
+-Image Component** (`ImageEditor.tsx`)
 
 ## Component Data Structure
 

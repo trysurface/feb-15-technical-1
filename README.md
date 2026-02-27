@@ -35,23 +35,6 @@ npm run type-check   # Run TypeScript type checking
 npm run lint         # Run linting
 ```
 
-## Component Data Structure
-
-Components have this structure:
-```typescript
-{
-  id: string;
-  type: 'text' | 'button' | 'image';
-  container: {
-    alignment: 'left' | 'center' | 'right';
-  };
-  props: {
-    // Component-specific props (text, src, alt, etc.)
-    styling: { } // Universal prop on all components to configure styling.
-  }
-}
-```
-
 ## Success Criteria
 
 When complete, you should be able to:

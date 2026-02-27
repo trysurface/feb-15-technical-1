@@ -42,8 +42,3 @@ When complete, you should be able to:
 - See the preview update in real-time
 - Style properties include units in the value (e.g., "16px", "2rem", "#ff0000")
 
-## Don't Worry About...
-
-- Listing the components in the sidebar 
-- Component add/delete functionality
-- Live preview panel that renders components

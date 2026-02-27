@@ -1,7 +1,8 @@
-import { TextComponent } from '@/types/components';
+import { Component } from '@/types/components';
 
 interface TextEditorProps {
-  component: TextComponent;
+  component: Component;
+  onUpdate: (component: Component) => void;
 }
 
 export const TextEditor = ({ component }: TextEditorProps) => {

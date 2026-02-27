@@ -1,7 +1,8 @@
-import { ButtonComponent } from '@/types/components';
+import { Component } from '@/types/components';
 
 interface ButtonEditorProps {
-  component: ButtonComponent;
+  component: Component;
+  onUpdate: (component: Component) => void;
 }
 
 export const ButtonEditor = ({ component }: ButtonEditorProps) => {

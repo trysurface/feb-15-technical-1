@@ -1,7 +1,7 @@
-import { ButtonComponent } from '@/types/components';
+import { Component } from '@/types/components';
 
 interface ButtonRendererProps {
-  component: ButtonComponent;
+  component: Component;
 }
 
 export const ButtonRenderer = ({ component }: ButtonRendererProps) => {

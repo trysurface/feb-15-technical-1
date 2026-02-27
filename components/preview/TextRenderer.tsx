@@ -1,7 +1,7 @@
-import { TextComponent } from '@/types/components';
+import { Component } from '@/types/components';
 
 interface TextRendererProps {
-  component: TextComponent;
+  component: Component;
 }
 
 export const TextRenderer = ({ component }: TextRendererProps) => {

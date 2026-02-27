@@ -2,7 +2,6 @@ import { Component } from '@/types/components';
 import { TextEditor } from './editors/TextEditor';
 import { ButtonEditor } from './editors/ButtonEditor';
 import { ImageEditor } from './editors/ImageEditor';
-import { isTextComponent, isButtonComponent, isImageComponent } from '@/types/components';
 
 interface ComponentEditorProps {
   component: Component;
@@ -19,6 +18,8 @@ export const ComponentEditor = ({ component, onUpdate, onBack }: ComponentEditor
         return 'Button';
       case 'image':
         return 'Image';
+      default:
+        return component.type;
     }
   };
 
@@ -38,14 +39,14 @@ export const ComponentEditor = ({ component, onUpdate, onBack }: ComponentEditor
       </div>
 
       <div className="flex-1 overflow-auto p-4">
-        {isTextComponent(component) && (
-          <TextEditor component={component}/>
+        {component.type === 'text' && (
+          <TextEditor component={component} onUpdate={onUpdate} />
         )}
-        {isButtonComponent(component) && (
-          <ButtonEditor component={component}/>
+        {component.type === 'button' && (
+          <ButtonEditor component={component} onUpdate={onUpdate} />
         )}
-        {isImageComponent(component) && (
-          <ImageEditor component={component}/>
+        {component.type === 'image' && (
+          <ImageEditor component={component} onUpdate={onUpdate} />
         )}
       </div>
     </div>

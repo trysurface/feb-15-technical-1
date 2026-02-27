@@ -1,14 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { Component, ComponentType } from '@/types/components';
+import { Component } from '@/types/components';
 import { Sidebar } from '@/components/sidebar/Sidebar';
 import { PreviewPanel } from '@/components/preview/PreviewPanel';
 
 // State management for the site builder
 // This uses React's useState - it's already implemented and working.
 
-const createDefaultComponent = (type: ComponentType, id: string): Component => {
+const createDefaultComponent = (type: string, id: string): Component => {
   const baseContainer = { alignment: 'center' as const };
 
   switch (type) {
@@ -19,14 +19,7 @@ const createDefaultComponent = (type: ComponentType, id: string): Component => {
         container: baseContainer,
         props: {
           text: 'New text component',
-          styling: {
-            fontSize: '16px',
-            color: '#000000',
-            fontWeight: 'normal',
-            textAlign: 'left',
-            margin: '8px',
-            padding: '8px',
-          },
+          styling: {},
         },
       };
     case 'button':
@@ -36,15 +29,7 @@ const createDefaultComponent = (type: ComponentType, id: string): Component => {
         container: baseContainer,
         props: {
           text: 'Click me',
-          styling: {
-            backgroundColor: '#3b82f6',
-            color: '#ffffff',
-            borderRadius: '8px',
-            padding: '12px',
-            fontSize: '16px',
-            fontWeight: '600',
-            border: 'none',
-          },
+          styling: {},
         },
       };
     case 'image':
@@ -53,30 +38,24 @@ const createDefaultComponent = (type: ComponentType, id: string): Component => {
         type: 'image',
         container: baseContainer,
         props: {
-          src: 'https://via.placeholder.com/400',
+          src: 'https://placehold.co/400x300',
           alt: 'Placeholder image',
-          styling: {
-            width: '400px',
-            height: 'auto',
-            borderRadius: '8px',
-            objectFit: 'cover',
-          },
+          styling: { width: '400px' },
         },
       };
+    default:
+      throw new Error(`Unknown component type: ${type}`);
   }
 };
 
 export default function Home() {
   // Component state and selected component tracking
-  const [components, setComponents] = useState<Component[]>([]);
+  const [components, setComponents] = useState<Component[]>([
+    createDefaultComponent('text', 'text-1'),
+    createDefaultComponent('button', 'button-1'),
+    createDefaultComponent('image', 'image-1'),
+  ]);
   const [selectedComponentId, setSelectedComponentId] = useState<string | null>(null);
-
-  // Handler functions for component operations
-  const handleAddComponent = (type: ComponentType) => {
-    const id = `${type}-${Date.now()}`;
-    const newComponent = createDefaultComponent(type, id);
-    setComponents([...components, newComponent]);
-  };
 
   const handleUpdateComponent = (updatedComponent: Component) => {
     setComponents(
@@ -108,7 +87,6 @@ export default function Home() {
         onDeselectComponent={handleDeselectComponent}
         onUpdateComponent={handleUpdateComponent}
         onDeleteComponent={handleDeleteComponent}
-        onAddComponent={handleAddComponent}
       />
       <PreviewPanel components={components} />
     </div>

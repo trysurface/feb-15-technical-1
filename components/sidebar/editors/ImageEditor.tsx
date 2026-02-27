@@ -1,7 +1,8 @@
-import { ImageComponent } from '@/types/components';
+import { Component } from '@/types/components';
 
 interface ImageEditorProps {
-  component: ImageComponent;
+  component: Component;
+  onUpdate: (component: Component) => void;
 }
 
 export const ImageEditor = ({ component }: ImageEditorProps) => {

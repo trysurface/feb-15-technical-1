@@ -1,7 +1,7 @@
-import { ImageComponent } from '@/types/components';
+import { Component } from '@/types/components';
 
 interface ImageRendererProps {
-  component: ImageComponent;
+  component: Component;
 }
 
 export const ImageRenderer = ({ component }: ImageRendererProps) => {
